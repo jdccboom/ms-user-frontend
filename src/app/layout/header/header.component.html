@@ -1,0 +1,38 @@
+<header>
+	<nav class="navbar fixed-top navbar-expand-md bg-white">
+		<div class="container">
+			<a class="navbar-brand d-none d-md-block" routerLink="/">
+				<img src="/assets/image/pelicula.png" width="50" height="50" alt="MovieFront" />
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link link-primary" routerLink="/home/">Home</a>
+						@if (!isLogin()) {
+						<a class="nav-link link-primary" routerLink="/login">Login</a>
+						<a class="nav-link link-primary" routerLink="/signup">Sign Up</a>
+						}
+					</li>
+				</ul>
+			</div>
+			@if (isLogin()) {
+			<div class="dropdown d-flex align-items-center">
+				<button class="btn btn-transparent dropdown-toggle" type="button" data-bs-toggle="dropdown"
+					aria-expanded="false">
+				</button>
+				<ul class="dropdown-menu">
+					@if(isAdmin()){
+						<li><a class="dropdown-item" routerLink="/home/movie-management">Movies</a></li>
+						<li><a class="dropdown-item" routerLink="/client/user-management">Users</a></li>
+					}
+					<li><a class="dropdown-item" (click)="logout()">Cerrar sesión</a></li>
+				</ul>
+			</div>
+			}
+		</div>
+	</nav>
+</header>

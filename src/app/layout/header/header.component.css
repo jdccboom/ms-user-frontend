@@ -1,0 +1,9 @@
+.nav-item {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        display: list-item;
+    }
+}

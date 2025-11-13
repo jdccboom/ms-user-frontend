@@ -1,0 +1,29 @@
+<div id= "root">
+    <div class= "form-control" id="container">
+        <h1>Login</h1>
+        <p>Enter your email below to start account </p>
+        <label for=""> Email</label>
+        <div>
+            <input type="email" [class]="invalidmail" placeholder="E-Mail" 
+            (input)="VerifyMail($event)" aria-label="Username" aria-describedby="addon-wrapping" 
+            [(ngModel)]="loginDto.email" #email="ngModel" required>
+            <div class="invalid-feedback">
+                This field is required
+            </div>
+        </div>
+        <label for="">Password</label>
+        <div>
+            <input type="password" [class]="invalidpass" placeholder="ej:123456789" 
+            (input)="VerifyPass($event)" aria-label="Password" aria-describedby="addon-wrapping" 
+            name="password" [(ngModel)]="loginDto.password" #password = "ngModel" required>
+            <div class="invalid-feedback">
+                This field is required
+            </div>
+        </div>
+  
+        <div id="container-buttons">
+            <button class="btn btn-outline-dark" (click)="login()">Login</button>
+            <button class="btn btn-dark" (click)="signup()">Sign Up</button>
+        </div>
+    </div>
+</div>

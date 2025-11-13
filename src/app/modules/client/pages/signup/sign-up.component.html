@@ -1,0 +1,51 @@
+<div id="root">
+    <div class="form-control" id="container">
+        <h1>Sign Up</h1>
+        <p>Enter the following fields to register</p>
+
+        <label for="">Name</label>
+        <div>
+            <input type="text" [class]="validateName" (input)="inputName($event)" placeholder="Name"
+                [(ngModel)]="account.name" required>
+            <div class="invalid-feedback" [hidden]="warningName">
+                This field is required
+            </div>
+        </div>
+        <label for="">Lastname</label>
+        <div>
+            <input type="text" [class]="validateLastname" (input)="inputLastname($event)" placeholder="Lastname"
+                [(ngModel)]="account.lastname" required>
+            <div class="invalid-feedback" [hidden]="warningLastname">
+                This field is required
+            </div>
+        </div>
+        <label for="">Phone</label>
+        <div>
+            <input type="text" [class]="validatePhone" (input)="inputPhone($event)" placeholder="Phone"
+                [(ngModel)]="account.phone" required>
+            <div class="invalid-feedback" [hidden]="warningPhone">
+                This field is required
+            </div>
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input type="email" [class]="validateMail" (input)="inputMail($event)" placeholder="E-mail"
+                [(ngModel)]="account.email">
+            <div class="invalid-feedback" [hidden]="warningMail">
+                This field is required
+            </div>
+        </div>
+        <div>
+            <label for="">Password</label>
+            <input type="password" [class]="validatePassword" (input)="inputPassword($event)" placeholder="ej:123456789"
+                [(ngModel)]="account.password">
+            <div class="invalid-feedback" [hidden]="warningPassword">
+                This field is required
+            </div>
+        </div>
+        <div id="container-buttons">
+            <button class="btn btn-outline-dark" (click)="SingUp($event)">SignUp</button>
+            <button class="btn btn-dark" (click)="goBack()">Cancel</button>
+        </div>
+    </div>
+</div>

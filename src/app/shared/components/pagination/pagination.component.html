@@ -1,0 +1,32 @@
+@if(total_pages > 0){
+<div class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item" [class.disabled]="isDisabledBack()" (click)="selectPage(pageActual - 1)">
+                <a class="page-link">Anterior</a>
+            </li>
+
+            <li class="page-item" (click)="selectPage(1)"><a class="page-link">{{1}}</a></li>
+
+            <li class="page-item"><a class="page-link">...</a></li>
+
+
+            <li class="page-item"><a class="page-link">{{pageActual - 1}}</a></li>
+
+            <li class="page-item active" aria-current="page">
+                <a class="page-link">{{pageActual}}</a>
+            </li>
+            
+            <li class="page-item"><a class="page-link">{{pageActual + 1}}</a></li>
+            
+            <li class="page-item"><a class="page-link">...</a></li>
+
+            <li class="page-item"><a class="page-link" (click)="selectPage(total_pages)">{{total_pages}}</a></li>
+            
+            <li class="page-item" [class.disabled]="isDisabledNext()" (click)="selectPage(pageActual + 1)">
+                <a class="page-link">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+}
